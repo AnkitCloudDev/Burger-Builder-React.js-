@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Modal.css';
 import Auxiliary from '../../Auxiliary/Auxiliary';
 import Backdrop from '../Backdrop/Backdrop';
-
+//  Shows modal screen with order summary
 const modal = (props) => (
     <Auxiliary>
         <Backdrop 
