@@ -1,19 +1,28 @@
-import React from 'react'
+import React from 'react';
 import Auxiliary from '../../Auxiliary/Auxiliary';
+import Button from '../../UI/Button/Button';
+
 const orderSummary = (props) => {
-    const ingredientSummary = Object.keys(props.ingredient).map(
+    const ingredientSummary = Object.keys(props.ingredients).map(
         key => {
-        return   <li> <span>{key}</span>: {props.ingredient[key]} </li>
+        return   <li key = {key}> 
+            <span style = {{textTransform: 'capitalize'}}> {key} 
+            </span>: {props.ingredients[key]} 
+            </li>
         }
     );
     
     return (
         <Auxiliary>
-            <p> Your Order: </p>
-            <p>A Delicious burger with the following ingredients: </p>
-            <ul>
 
+            <p> Your Order: </p>
+            <p> A Delicious burger with the following ingredients: </p>
+            <ul>
+            {ingredientSummary}
             </ul>
+            <p>Continue to Checkout ? </p>
+            <Button clicked = {props.purchaseCancel} btnType = "Danger" > CANCEL </Button>
+            <Button clicked = {props.purchaseContinued} btnType = "Success" > CONTINUE </Button>
         </Auxiliary>
     )
 };

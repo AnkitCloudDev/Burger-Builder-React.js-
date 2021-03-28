@@ -3,7 +3,7 @@ import classes from './Layout.css';
 import Auxiliary from '../Auxiliary/Auxiliary';
 const layout = (props) => (
     <Auxiliary>
-<div>Toolbar,sidebar,drawer</div>
+<div>Project under Construction.</div>
 <main className={classes.Content}>
 {props.children}
 </main>
