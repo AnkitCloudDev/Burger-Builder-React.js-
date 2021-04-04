@@ -13,11 +13,16 @@ class Layout extends Component{
         console.log("Side Drawer Called");
     }
 
+    toggleSideDrawer = () => {
+        const show = this.state.showSideDrawer;
+        this.setState({showSideDrawer: !show});
+
+    }
 render(){
 
     return ( 
     <Auxiliary>
-        <Toolbar></Toolbar>
+        <Toolbar drawerToggleClicked = {this.toggleSideDrawer}></Toolbar>
         <SideDrawer 
         open = {this.state.showSideDrawer} 
         closed={this.SideDrawerClosedHandler}
