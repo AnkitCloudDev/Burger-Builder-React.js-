@@ -26,8 +26,7 @@ render(){
         <SideDrawer 
         open = {this.state.showSideDrawer} 
         closed={this.SideDrawerClosedHandler}
-         />
-         
+         />         
         <main className = {classes.Content}>
         {this.props.children}
         </main>
