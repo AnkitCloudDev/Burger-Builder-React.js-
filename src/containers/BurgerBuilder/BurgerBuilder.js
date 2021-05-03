@@ -24,6 +24,7 @@ class BurgerBuilder extends Component{
         purchasable: false,
         purchasing: false,
         loading: false,
+        error: false,
     };
 
     componentDidMount(){
@@ -33,6 +34,11 @@ class BurgerBuilder extends Component{
                 this.setState({ingredients: response.data});
             }
         )
+        .catch(error => {
+            this.setState({error: true});
+
+        });
+
     }
 
     updatePurchasableState(ingredients) {

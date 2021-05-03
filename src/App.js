@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import Layout from './components/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
-import classes from './App.css';
+import Checkout from './containers/Checkout/Checkout';
 
 class App extends Component {
+
   render() {
+
     return (
   <Layout>
-    <BurgerBuilder></BurgerBuilder>
+     <BurgerBuilder/>
+     <Checkout></Checkout>
   </Layout>
+
     );
   }
 }
