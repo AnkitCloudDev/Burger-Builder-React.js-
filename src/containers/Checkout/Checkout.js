@@ -5,9 +5,27 @@ class Checkout extends Component{
         ingredients: {
             salad: 1,
             meat: 1,
-            cheese: 1
+            cheese: 1,
+            bacon: 0,
+
         }
     }
+
+    componentDidMount() {
+        console.log("Inside Checkout");
+        console.log(this.props.location.search);
+            const urlParams = new URLSearchParams(this.props.location.search);
+            const ingredients = {};
+            for(let param of urlParams.entries())
+            {
+                ingredients[param[0]] = +param[1];
+                
+            }
+            
+            this.setState({ingredients: ingredients});
+        
+    }
+    
         checkoutCancelledHandler = () => {
             this.props.history.goBack();
         }
